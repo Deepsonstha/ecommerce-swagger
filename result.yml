@@ -1,0 +1,95 @@
+openapi: 3.0.0
+info:
+  title: Ecommerce_api
+  version: 1.0.0
+servers:
+  - url: http://127.0.0.1:8000
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+tags:
+  - name: auth
+paths:
+  /api/login:
+    post:
+      tags:
+        - auth
+      summary: login
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: deepak@gmail.com
+                password:
+                  type: integer
+                  example: '123'
+      responses:
+        '200':
+          description: OK
+          headers:
+            Host:
+              schema:
+                type: string
+                example: 127.0.0.1:8000
+            Connection:
+              schema:
+                type: string
+                example: close
+            X-Powered-By:
+              schema:
+                type: string
+                example: PHP/8.3.6
+            Cache-Control:
+              schema:
+                type: string
+                example: no-cache, private
+            Date:
+              schema:
+                type: string
+                example: Sat, 01 Jun 2024 10:48:39 GMT
+            Content-Type:
+              schema:
+                type: string
+                example: application/json
+            Access-Control-Allow-Origin:
+              schema:
+                type: string
+                example: '*'
+          content:
+            application/json:
+              schema:
+                type: object
+              example:
+                user:
+                  id: 1
+                  name: deepak
+                  email: deepak@gmail.com
+                  role: []
+                  created_at: '2024-06-01T07:55:23.000000Z'
+                  updated_at: '2024-06-01T07:55:23.000000Z'
+                token: >-
+                  eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmIzNDE0MDdmMGE1NWUzOTY5MTgxODI5NWJkMmUwNjA1M2RjNzhmMDNjYzQxMTM4ZmM1OTExOTZlYzA2YzZjODlkOTYyZTNjYWE5YjU1ZmQiLCJpYXQiOjE3MTcyMzg5MTkuODMxNTY3LCJuYmYiOjE3MTcyMzg5MTkuODMxNTY4LCJleHAiOjE3NDg3NzQ5MTkuODI4MjU0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.CLPH3qBGFXmdxo9Q-o2jxqtaC5Ke2fJd9CKji_D-iT7nQ4dPxZLUbWi5IhxeAK4wkpaT8FPsNAxUv4x8cGaDZuxBmnJB-RjYbVF5si3bMHFEDSO7kvJr3eo-0e_KgxHwYvKh5kuDKRrcxFWZDZ7BCVxBSRIWVreG1lmRBppdlfCa7JhqHcE4bnb7WJcsPX6Cn3hXOZ-8Nkl2ldaERCvd4j9ew_I_xDiNDVVM0j_D90yLv9XTVtVoO-ly6FwuI25YcG928yngh33FIFZC7S8gBFbigBnKLqpZKZ489eCEUlAmThjAjTybZRdC41mqnhhlMdhSmKCO_DehWxMa9arZjIXQ_D7wqjzohReYNosD2QmuXNaO4ai99sJiJLlAkWx1qNleVLzJiE5jwRr4OqTmc9ZX8yce6bGusAVQLyrk6MR2aW7Nx1fsHoc3QcpKiBLWb7qgtUpPYpTyz2z3QIyUSdAOsIblytnPv-6YIst5tDArOtHvXxfd3NqlJHDRb3nWVCjwLxtBn0sPz53jlprLKQdkByO7CylDok3I0XSC9KK4ncret5WKXZqF_GoWU-w7_lShqPYhAVqeSU-RbsO_a6F4Fx9KjaDsxourNtvSRkCEE71aQ-gUHYfXTj3oCW0ameSRxpR3GFF5Oq-9RyhP-iHm3U2PM6VAYv2OX9YN1B8
+  /api/profile:
+    get:
+      tags:
+        - auth
+      summary: profile
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: Accept
+          in: header
+          schema:
+            type: string
+          example: application/json
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json: {}

@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "4c79afce-b7cb-4ba2-b0da-fd7a20f14f82",
+		"name": "Ecommerce_api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33919749"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "deepak@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/login",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["api", "login"]
+						}
+					},
+					"response": [
+						{
+							"name": "login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "deepak@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/login",
+									"protocol": "http",
+									"host": ["127", "0", "0", "1"],
+									"port": "8000",
+									"path": ["api", "login"]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "127.0.0.1:8000"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.3.6"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 01 Jun 2024 10:48:39 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"user\": {\n        \"id\": 1,\n        \"name\": \"deepak\",\n        \"email\": \"deepak@gmail.com\",\n        \"role\": [],\n        \"created_at\": \"2024-06-01T07:55:23.000000Z\",\n        \"updated_at\": \"2024-06-01T07:55:23.000000Z\"\n    },\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZmIzNDE0MDdmMGE1NWUzOTY5MTgxODI5NWJkMmUwNjA1M2RjNzhmMDNjYzQxMTM4ZmM1OTExOTZlYzA2YzZjODlkOTYyZTNjYWE5YjU1ZmQiLCJpYXQiOjE3MTcyMzg5MTkuODMxNTY3LCJuYmYiOjE3MTcyMzg5MTkuODMxNTY4LCJleHAiOjE3NDg3NzQ5MTkuODI4MjU0LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.CLPH3qBGFXmdxo9Q-o2jxqtaC5Ke2fJd9CKji_D-iT7nQ4dPxZLUbWi5IhxeAK4wkpaT8FPsNAxUv4x8cGaDZuxBmnJB-RjYbVF5si3bMHFEDSO7kvJr3eo-0e_KgxHwYvKh5kuDKRrcxFWZDZ7BCVxBSRIWVreG1lmRBppdlfCa7JhqHcE4bnb7WJcsPX6Cn3hXOZ-8Nkl2ldaERCvd4j9ew_I_xDiNDVVM0j_D90yLv9XTVtVoO-ly6FwuI25YcG928yngh33FIFZC7S8gBFbigBnKLqpZKZ489eCEUlAmThjAjTybZRdC41mqnhhlMdhSmKCO_DehWxMa9arZjIXQ_D7wqjzohReYNosD2QmuXNaO4ai99sJiJLlAkWx1qNleVLzJiE5jwRr4OqTmc9ZX8yce6bGusAVQLyrk6MR2aW7Nx1fsHoc3QcpKiBLWb7qgtUpPYpTyz2z3QIyUSdAOsIblytnPv-6YIst5tDArOtHvXxfd3NqlJHDRb3nWVCjwLxtBn0sPz53jlprLKQdkByO7CylDok3I0XSC9KK4ncret5WKXZqF_GoWU-w7_lShqPYhAVqeSU-RbsO_a6F4Fx9KjaDsxourNtvSRkCEE71aQ-gUHYfXTj3oCW0ameSRxpR3GFF5Oq-9RyhP-iHm3U2PM6VAYv2OX9YN1B8\"\n}"
+						}
+					]
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/profile",
+							"protocol": "http",
+							"host": ["127", "0", "0", "1"],
+							"port": "8000",
+							"path": ["api", "profile"]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
