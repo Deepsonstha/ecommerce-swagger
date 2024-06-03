@@ -1,9 +1,23 @@
 openapi: 3.0.0
 info:
-  title: Ecommerce_api
-  version: 1.0.0
+  title: Swagger
+  description: Swagger
+  version: '1.0'
+  x-logo:
+    url: https://github.com/joolfe/logoBanner.png
+    backgroundColor: '#FFFFFF'
+    altText: logo
+  termsOfService: '#'
+  contact:
+    name: Scodus
+    url: https://scodus.com
+    email: scodusnp@gmail.com
+  license:
+    name: MIT
+    url: https://es.wikipedia.org/wiki/Licencia_MIT
 servers:
-  - url: http://127.0.0.1:8000
+  - url: http://192.168.1.73:8000/
+    description: Server
 components:
   securitySchemes:
     bearerAuth:
